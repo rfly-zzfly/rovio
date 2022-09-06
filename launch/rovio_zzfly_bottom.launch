@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<launch>
+  <node pkg="rovio" type="rovio_node" name="rovio" output="screen">
+    <param name="filter_config" value="$(find rovio)/cfg/zzfly_bottom.info"/>
+    <param name="camera0_config" value="$(find rovio)/cfg/zzfly_bottom.yaml"/>
+    <param name="camera1_config" value=""/>
+    <remap from="/imu0" to="/airsim_node/drone_1/imu/imu"/>
+    <remap from="/cam0/image_raw" to="/airsim_node/drone_1/bottom_center/Scene_gray"/>
+    <!-- <remap from="/airsim_node/drone_1/imu/imu" to="/imu0"/> -->
+    <!-- <remap from="/airsim_node/drone_1/bottom_center/Scene" to="/cam0/image_raw"/> -->
+  </node>
+</launch>
